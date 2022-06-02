@@ -1,0 +1,58 @@
+*{
+    font-family: 'poppins',sans-serif;
+}
+.Display_Main{
+    height:80%;
+    width:100%;
+    position: absolute;
+    bottom: 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-rows: 40% 60%;
+    grid-template-columns: 100%;
+    grid-template-areas: 'Heading'
+                          'Main';
+    /* background: pink; */
+}
+.Main_weather{
+    grid-area:Heading;
+    height:100%;
+    width:100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-direction: column;
+    color:white;
+    padding-left: 5em;
+    /* text-align: left; */
+}
+.Main_weather .Heading{
+    font-size: 5em;
+    padding-left: 3em;
+}
+.Main_weather h2{
+    font-size: 2em;
+    padding-left: 7.6em;
+}
+.Sub_weather{
+    grid-area:Main;
+    height:100%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* padding: 50px; */
+}
+.Sub_weather .Sub_sub{
+    height: 40%;
+    width:70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: rgba(255,255,255,0.5);
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+
+}
