@@ -39,42 +39,23 @@ function Display ({check}:PropsN) {
   const [name,setName] = useState<string>('')
   let city_name = check
   let nc = 'delhi'
-
-    // useEffect(() => {
-    // console.log('p =',city_name)
-     
-    //     fetch(`https://api.openweathermap.org/data/2.5/weather?q=`+city_name+`&limit=5&appid=da540d286a89bdbd7dec5990f11a2299`)
-    //     .then(response => response.json())
-    //     .then(res =>{ 
-    //       console.log(res)
-    //     data = res
-    //     console.log('data',data)
-    //   })
-      
-
-    // console.log('L =',city_name)
-    // console.log('KL',data)
-      
-
-    // },[city_name])
     
     async function fetch_R(){
       var url = `https://api.openweathermap.org/data/2.5/weather?q=`+city_name+`&limit=5&appid=da540d286a89bdbd7dec5990f11a2299`
       var res = await fetch(url)
       let kdata = await res.json()
       
-      console.log('AF= ',kdata)
-      console.log(kdata.main.temp)
-      console.log('name = ',kdata.name)
+      // console.log('AF= ',kdata)
+      // console.log(kdata.main.temp)
+      // console.log('name = ',kdata.name)
       setFind(true)
       
       setData_R(kdata)
       setName(kdata.name)
       setFind(false)
 
-      console.log('AFF',data_R)
-      console.log('hjjh',data_R?.main.pressure)
-      // console.log('Nname = ',data)
+      // console.log('AFF',data_R)
+      // console.log('hjjh',data_R?.main.pressure)
 
     }
     useEffect(() => {
@@ -88,16 +69,10 @@ function Display ({check}:PropsN) {
   
       },[city_name])
       
-    // if(data.length == 0){
-    //   return (
-    //     <>Nothing yet</>
-    //   )
-    // }
-    // else{
+   
      
       return( 
         <>
-        {/* <Display_Sub data={data_R} /> */}
         <div className="Display_Main">
             <div className="Main_weather">
               <h1 className='Heading'>{data_R?.name}</h1>
