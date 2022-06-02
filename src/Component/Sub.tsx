@@ -5,7 +5,8 @@ import './sub.css'
 
 function Sub() {
     const [data,setData] = useState<string>('')
-    const [check, setCheck] = useState<string>('')
+    const [check, setCheck] = useState<string>('delhi')
+    // check=='delhi'
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
        

@@ -43,20 +43,21 @@ function Display ({check}:PropsN) {
   let nc = 'delhi'
     
     async function fetch_R(){
+      let urlc =`https://api.openweathermap.org/data/2.5/weather?q=`+city_name+`&limit=5&appid=e0acb40649748d907810e7cb7e2bb994`
       var url = `https://api.openweathermap.org/data/2.5/weather?q=`+city_name+`&limit=5&appid=da540d286a89bdbd7dec5990f11a2299`
-      var res = await fetch(url)
+      var res = await fetch(urlc)
       let kdata = await res.json()
       
       // console.log('AF= ',kdata)
       // console.log(kdata.main.temp)
       // console.log('name = ',kdata.name)
-      setFind(true)
+      // setFind(true)
       
       setData_R(kdata)
       setName(kdata.name)
-      setFind(false)
+      setFind(true)
 
-      // console.log('AFF',data_R)
+      console.log('AFF',data_R)
       // console.log('hjjh',data_R?.main.pressure)
 
     }
@@ -71,29 +72,54 @@ function Display ({check}:PropsN) {
   
       },[city_name])
       
-   
-     
-      return( 
-        <>
-        <div className="Display_Main">
-            <div className="Main_weather">
-              <h1 className='Heading'>{data_R?.name}</h1>
-              <h2>{data_R?.main.temp}&deg;</h2>
-            </div>
-
-            <div className="Sub_weather">
-              <div className="Sub_sub">
-                <h2>Clouds : <br></br>{data_R?.clouds.all}%</h2>
-                <h2>Humidity : <br></br>{data_R?.main.humidity}%</h2>
-                <h2>Wind : <br></br>{data_R?.wind.speed} KMPH</h2>
+      if(find==false){
+        return( 
+          <>
+          {/* <div className="Display_Main">
+              <div className="Main_weather">
+                <h1 className='Heading'>{data_R?.name}</h1>
+                <h2>{data_R?.main.temp}&deg;</h2>
               </div>
-            </div>
-        </div>
-        
-        
-        </>
-      )
+  
+              <div className="Sub_weather">
+                <div className="Sub_sub">
+                  <h2>Clouds : <br></br>{data_R?.clouds.all}%</h2>
+                  <h2>Humidity : <br></br>{data_R?.main.humidity}%</h2>
+                  <h2>Wind : <br></br>{data_R?.wind.speed} KMPH</h2>
+                </div>
+              </div>
+          </div> */}
+          <h1>working</h1>
+          ``
+          </>
+        )
+       
+      }
+      else{
+        return(
+          // <h1>hi</h1>
+          <div className="Display_Main">
+              <div className="Main_weather">
+                <h1 className='Heading'>{data_R?.name}</h1>
+                <h2>{data_R?.main.temp}&deg;</h2>
+              </div>
+  
+              <div className="Sub_weather">
+                <div className="Sub_sub">
+                  <h2>Clouds : <br></br>{data_R?.clouds.all}%</h2>
+                  <h2>Humidity : <br></br>{data_R?.main.humidity}%</h2>
+                  <h2>Wind : <br></br>{data_R?.wind.speed} KMPH</h2>
+                </div>
+              </div>
+          </div>
+        )
+      }
+   
+      
+    
+      
     // }
+  // }
   
 }
 
