@@ -2,6 +2,7 @@ import { stringify } from 'querystring'
 import React, { useState,useEffect } from 'react'
 import './Display.css'
 import Display_Sub from './Display_Sub'
+import {api2} from './API2'
 // require('dotenv').config()
 
 interface api {
@@ -37,71 +38,54 @@ function Display ({check}:PropsN) {
  
   const [find, setFind] = useState<Boolean>(false)
   const [data_R, setData_R] = useState<api>()
+  const [data_R2, setData_R2] = useState<api2>()
   const [name,setName] = useState<string>('')
   let city_name = check
+  let t:number|undefined;
   const apiKey = 'da540d286a89bdbd7dec5990f11a2299'
   let nc = 'delhi'
     
     async function fetch_R(){
       let urlc =`https://api.openweathermap.org/data/2.5/weather?q=`+city_name+`&limit=5&appid=e0acb40649748d907810e7cb7e2bb994`
-      var url = `https://api.openweathermap.org/data/2.5/weather?q=`+city_name+`&limit=5&appid=da540d286a89bdbd7dec5990f11a2299`
       var res = await fetch(urlc)
       let kdata = await res.json()
-      
-      // console.log('AF= ',kdata)
-      // console.log(kdata.main.temp)
-      // console.log('name = ',kdata.name)
-      // setFind(true)
-      
       setData_R(kdata)
       setName(kdata.name)
       setFind(true)
+    }
+    async function fetch_R1(){
+        let url = 'http://api.weatherapi.com/v1/current.json?key=e69179dbcaf74929a78121725220206&q='+city_name+'&aqi=no'
+        var res = await fetch(url)
+        let kdata = await res.json()
+        setData_R2(kdata)
+        console.log('New api : ',kdata)
+    }
 
-      console.log('AFF',data_R)
-      // console.log('hjjh',data_R?.main.pressure)
-
+    async function fetch_R3(){
+      
     }
     useEffect(() => {
-      console.log('p =',city_name)
-       
         fetch_R()
-  
-      console.log('L =',city_name)
-      console.log('KL',data)
-        
-  
+        fetch_R1()
       },[city_name])
       
       if(find==false){
         return( 
           <>
-          {/* <div className="Display_Main">
-              <div className="Main_weather">
-                <h1 className='Heading'>{data_R?.name}</h1>
-                <h2>{data_R?.main.temp}&deg;</h2>
-              </div>
-  
-              <div className="Sub_weather">
-                <div className="Sub_sub">
-                  <h2>Clouds : <br></br>{data_R?.clouds.all}%</h2>
-                  <h2>Humidity : <br></br>{data_R?.main.humidity}%</h2>
-                  <h2>Wind : <br></br>{data_R?.wind.speed} KMPH</h2>
-                </div>
-              </div>
-          </div> */}
           <h1>working</h1>
-          ``
           </>
         )
        
       }
       else{
         return(
-          // <h1>hi</h1>
           <div className="Display_Main">
               <div className="Main_weather">
                 <h1 className='Heading'>{data_R?.name}</h1>
-                <h2>{data_R?.main.temp}&deg;</h2>
+                <h2>{data_R2?.current.temp_c}&deg;C</h2>
+                <h3>{data_R2?.current.condition.text}</h3>
+                {/* <h2>{t}&deg;C</h2> */}
+
               </div>
   
               <div className="Sub_weather">

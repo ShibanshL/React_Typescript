@@ -35,6 +35,10 @@
     font-size: 2em;
     padding-left: 7.6em;
 }
+.Main_weather h3{
+    padding-left: 13em;
+    margin-top: 10px;
+}
 .Sub_weather{
     grid-area:Main;
     height:100%;
