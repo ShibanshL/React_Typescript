@@ -58,15 +58,21 @@ function Display ({check}:PropsN) {
         var res = await fetch(url)
         let kdata = await res.json()
         setData_R2(kdata)
-        console.log('New api : ',kdata)
+        // console.log('New api : ',kdata)
     }
 
     async function fetch_R3(){
-      
+      let url = 'http://api.weatherapi.com/v1/forecast.json?key=e69179dbcaf74929a78121725220206&q='+city_name+'&days=10&aqi=no&alerts=no'
+      var res = await fetch(url)
+      let kdata = await res.json()
+      setData_R2(kdata)
+      console.log('New api : ',kdata)
+
     }
     useEffect(() => {
         fetch_R()
         fetch_R1()
+        fetch_R3()
       },[city_name])
       
       if(find==false){
