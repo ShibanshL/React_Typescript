@@ -2,7 +2,7 @@ import { stringify } from 'querystring'
 import React, { useState,useEffect } from 'react'
 import './Display.css'
 import Display_Sub from './Display_Sub'
-require('dotenv').config()
+// require('dotenv').config()
 
 interface api {
   base: string
@@ -39,11 +39,11 @@ function Display ({check}:PropsN) {
   const [data_R, setData_R] = useState<api>()
   const [name,setName] = useState<string>('')
   let city_name = check
-  const apiKey = process.env.API_KEY
+  const apiKey = 'da540d286a89bdbd7dec5990f11a2299'
   let nc = 'delhi'
     
     async function fetch_R(){
-      var url = `https://api.openweathermap.org/data/2.5/weather?q=`+city_name+`&limit=5&appid=`+apiKey+``
+      var url = `https://api.openweathermap.org/data/2.5/weather?q=`+city_name+`&limit=5&appid=da540d286a89bdbd7dec5990f11a2299`
       var res = await fetch(url)
       let kdata = await res.json()
       
