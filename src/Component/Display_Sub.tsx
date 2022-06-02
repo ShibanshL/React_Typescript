@@ -1,19 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import './Display.css'
 
-interface props {
-    data:string
-}
-function Display_Sub(data:props) {
-   const [cdata,setCdata]=useState<string>('')
-   useEffect(()=>
-   {
-        // setCdata(data)
-        console.log('Data in side new display',data)
-   },[data])
 
+function Display_Sub() {
 
   return (
-    <div>Display_Sub</div>
+    <div className='Display_sub'>Please enter the name of a city?</div>
   )
 }
 
