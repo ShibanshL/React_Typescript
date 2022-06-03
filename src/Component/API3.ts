@@ -1,13 +1,20 @@
 export interface api3{
     current:{}
-    forcast:{
+    forecast:{
         forecastday:[
+            // astro:{},
             day:{
                 avghumidity: number
                 avgtemp_c: number
                 avgtemp_f: number
                 avgvis_km: number
                 avgvis_miles: number
+                condition:
+                {                    
+                    code: number
+                    icon: string
+                    text: string
+                }
             }
         ]
     }

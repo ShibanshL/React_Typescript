@@ -77,7 +77,10 @@ function Display ({check}:PropsN) {
     useEffect(() => {
         fetch_R()
         fetch_R1()
-        fetch_R3()
+        setTimeout(
+          fetch_R3
+        ,5000)
+        // fetch_R3()
       },[city_name])
       
       if(find==false){
@@ -109,7 +112,14 @@ function Display ({check}:PropsN) {
                 </div>
             </div>
 
-            {/* <div className="test">{data_R3?.forcast.forecastday.map(e => (e.avgtemp_c))}</div> */}
+            <div className="test">{data_R3?.forecast.forecastday.map(e =>{ 
+                if(e.avghumidity == undefined){
+                  return( <h2>{e.avgtemp_f}</h2>)
+                }
+                else {
+                  return <h2>{e.avgtemp_c}</h2>
+                }
+            })}</div>
           </>
         )
       }
