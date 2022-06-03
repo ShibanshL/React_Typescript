@@ -77,7 +77,9 @@
 }
 
 .test{
-    background: white;
+    /* background: white; */
     height: 100px;
+    color:pink;
+    font-size: 3em;
     width:100px;
 }

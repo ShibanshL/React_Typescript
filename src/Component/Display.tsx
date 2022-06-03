@@ -79,7 +79,8 @@ function Display ({check}:PropsN) {
         fetch_R1()
         setTimeout(
           fetch_R3
-        ,5000)
+        ,
+        2000)
         // fetch_R3()
       },[city_name])
       
@@ -112,14 +113,16 @@ function Display ({check}:PropsN) {
                 </div>
             </div>
 
-            <div className="test">{data_R3?.forecast.forecastday.map(e =>{ 
+            {/* <div className="test">{data_R3?.forecast.forecastday.map(e =>{ 
                 if(e.avghumidity == undefined){
-                  return( <h2>{e.avgtemp_f}</h2>)
+                  return( <h2 key={e.avgtemp_c}>{e.avgtemp_f}</h2>)
                 }
                 else {
-                  return <h2>{e.avgtemp_c}</h2>
+                  return <h2 key={e.avgtemp_c}>{e.avgtemp_c}</h2>
                 }
-            })}</div>
+            })}</div> */}
+            {console.log(data_R3?.forecast.forecastday)}
+            <div className="test">{data_R3?.forecast.forecastday.map(e => {return( <h2 key={e.avgtemp_c}>{e.avgtemp_c}</h2> )})}</div>
           </>
         )
       }
