@@ -7,6 +7,9 @@ import {api3} from './API3'
 import Card from './Card'
 // require('dotenv').config()
 
+// console.log(process.env)
+// require('dotenv').config()
+
 interface api {
   base: string
   clouds: {all: number}
