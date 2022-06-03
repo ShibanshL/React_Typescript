@@ -30,7 +30,7 @@ interface api {
   sys: {type: number, id: number, country: string, sunrise: number, sunset: number}
   timezone: number
   visibility: number
-  weather: [id:number, main: string, description: string, icon: string]
+  weather: [{id:number, main: string, description: string, icon: string}]
   wind: {speed:number, deg: number, gust: number}
 }
 
@@ -57,6 +57,7 @@ function Display ({check}:PropsN) {
         let urlc =`https://api.openweathermap.org/data/2.5/weather?q=`+city_name+`&limit=5&appid=e0acb40649748d907810e7cb7e2bb994`
         var res = await fetch(urlc)
         let kdata = await res.json()
+        console.log('fetch_R',kdata)
         setData_R(kdata)
         setName(kdata.name)
         setFind(true)
@@ -72,6 +73,7 @@ function Display ({check}:PropsN) {
         let url = 'http://api.weatherapi.com/v1/current.json?key=e69179dbcaf74929a78121725220206&q='+city_name+'&aqi=no'
         var res = await fetch(url)
         let kdata = await res.json()
+        console.log('fetch_R1',kdata)
         setData_R2(kdata)
         // console.log('New api : ',kdata)
       } 
@@ -87,6 +89,7 @@ function Display ({check}:PropsN) {
         let url = 'http://api.weatherapi.com/v1/forecast.json?key=e69179dbcaf74929a78121725220206&q='+city_name+'&days=10&aqi=no&alerts=no'
         var res = await fetch(url)
         let kdata = await res.json()
+        console.log('fetch_R3',kdata)
         setData_R2(kdata)
         console.log('New api : ',kdata)
         setData_R3(kdata)
@@ -121,13 +124,11 @@ function Display ({check}:PropsN) {
       else{
         return(
           <>
-            <div className="Display_Main">
+            {/* <div className="Display_Main">
                 <div className="Main_weather">
                   <h1 className='Heading'>{data_R?.name}</h1>
                   <h2>{data_R2?.current.temp_c}&deg;C</h2>
                   <h3>{data_R2?.current.condition.text}</h3>
-                  {/* <h2>{t}&deg;C</h2> */}
-
                 </div>
     
                 <div className="Sub_weather">
@@ -137,7 +138,7 @@ function Display ({check}:PropsN) {
                     <h2>Wind : <br></br>{data_R?.wind.speed} KMPH</h2>
                   </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* <div className="test">{data_R3?.forecast.forecastday.map(e =>{ 
                 if(e.avghumidity == undefined){
@@ -150,17 +151,43 @@ function Display ({check}:PropsN) {
             {/* {console.log(data_R3?.forecast.forecastday)} */}
             {/* {console.log('inside return',data_R)} */}
             
-            <div className="test">{data_R3?.forecast.forecastday.map(e => {return( 
+            {/* <div className="test">{data_R3?.forecast.forecastday.map(e => {return( 
               <>
                 <div className="Card">
                     <h2 key={e.day.avgtemp_c}>{e.day.avgtemp_c}&deg;C</h2>
                     <h2 key={e.day.condition.text}>{e.day.condition.text}</h2>
                     <h3 key={e.date}>{e.date}</h3>
-
+                    <img src={e.day.condition.icon} alt="err" />
 
                 </div>
               </>
-             )})}</div>
+             )})}</div> */}
+
+             <div className="Display_Main">
+               <div className="Part_One">
+                 <div className="Top_text">
+                   <h1>San Francisco</h1>
+                   <h2 className='Country'>USA</h2>
+                   <h2>2022-06-03</h2>
+                 </div>
+                 <div className="Bottom_text">
+                   <div className="Img">
+                     <img src={data_R?.weather[0].icon} alt="" />
+                   </div>
+                   <h2>Partly Cloudy</h2>
+                 </div>
+               </div>
+               <div className="Part_Two">
+                 <div className="Top_temp">
+                   <h1>32.8°</h1>
+                   <h2>200.56°F</h2>
+                 </div>
+                 <div className="Cards"></div>
+               </div>
+             </div>
+
+
+
           </>
         )
       }

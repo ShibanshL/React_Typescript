@@ -10,6 +10,7 @@ interface props  {
 function Input({data, setData, handleSubmit}:props) {
   return (
     <form onSubmit={e => handleSubmit(e)}>
+    <label>Your City : </label>
     <input 
     type='text' 
     placeholder='Name of the City'

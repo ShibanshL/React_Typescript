@@ -2,110 +2,57 @@
     font-family: 'poppins',sans-serif;
 }
 .Display_Main{
-    height:80%;
-    width:100%;
-    position: absolute;
-    bottom: 0;
-    display: grid;
+    height:90%;
+    width:90%;
+    display: flex;
     align-items: center;
     justify-content: center;
-    grid-template-rows: 40% 60%;
-    grid-template-columns: 100%;
-    grid-template-areas: 'Heading'
-                          'Main';
-    /* background: pink; */
+    background: pink;
+
 }
-.Main_weather{
-    grid-area:Heading;
+.Part_One{
+    background: cyan;
     height:100%;
     width:100%;
     display: flex;
     align-items: baseline;
     justify-content: center;
     flex-direction: column;
-    color:white;
-    padding-left: 5em;
-    /* text-align: left; */
 }
-.Main_weather .Heading{
-    font-size: 5em;
-    padding-left: 1.8em;
+.Top_text{
+    height:100%;
+    width:100%;
+    display: flex;
+    align-items: baseline;
+    justify-content:flex-start;
+    margin-left: 2vw;
+    flex-direction: column;
 }
-.Main_weather h2{
+.Top_text h1{
+    font-size: 4em;
+    font-weight: 400;
+}
+.Top_text .Country{
     font-size: 2em;
-    padding-left: 4.6em;
+    margin-top: -2vh;
+
 }
-.Main_weather h3{
-    padding-left: 8em;
-    margin-top: 10px;
+.Bottom_text{
+    height:100%;
+    width:100%;
+    display: flex;
+    align-items:baseline;
+    justify-content:end;
+    margin-left: 2vw;
+    margin-bottom: 5vh;
+    flex-direction: column;
 }
-.Sub_weather{
-    grid-area:Main;
+.Part_Two{
+    background: yellow;
     height:100%;
     width:100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    /* padding: 50px; */
-}
-.Sub_weather .Sub_sub{
-    height: 40%;
-    width:72%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    background: rgba(255,255,255,0.5);
-    border-radius: 25px;
-    backdrop-filter: blur(10px);
-    color: white;
-
-}
-
-.Display_sub{
-    height:80vh;
-    width:100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    z-index: 5;
-    bottom: 0;
-    color:white;
-    font-size: 5em;
-    text-align: center;
-
-}
-
-.test{
-    /* background: white; */
-    height: 50vh;
-    min-height: 50vh;
-    min-width: 100Vw;
-    width:100vw;
-    /* color:pink; */
-    /* font-size: 3em; */
-    width:100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: absolute;
-    margin-top: -55vh;
-    /* background: cyan; */
-}
-.Card{
-    position: relative;
-    right:-12vw;
-    background: rgba(255,255,255,0.5);
-    border-radius: 25px;
-    margin:30px;
-    text-align: center;
-    height: 150px;
-    width:200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    /* color:white; */
 }
