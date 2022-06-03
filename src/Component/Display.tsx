@@ -166,23 +166,35 @@ function Display ({check}:PropsN) {
              <div className="Display_Main">
                <div className="Part_One">
                  <div className="Top_text">
-                   <h1>San Francisco</h1>
-                   <h2 className='Country'>USA</h2>
-                   <h2>2022-06-03</h2>
+                   <h1>{data_R2?.location.name}</h1>
+                   <h2 className='Country'>{data_R2?.location.country}</h2>
+                   <h2>{data_R3?.forecast.forecastday[0].date}</h2>
                  </div>
                  <div className="Bottom_text">
                    <div className="Img">
-                     <img src={data_R?.weather[0].icon} alt="" />
+                     <img src={data_R3?.forecast.forecastday[0].day.condition.icon} alt="" />
                    </div>
-                   <h2>Partly Cloudy</h2>
+                   <h2>{data_R3?.forecast.forecastday[0].day.condition.text}</h2>
                  </div>
                </div>
                <div className="Part_Two">
                  <div className="Top_temp">
-                   <h1>32.8°</h1>
-                   <h2>200.56°F</h2>
+                   <h1>{data_R2?.current.temp_c}°</h1>
+                   <h2>{data_R2?.current.temp_f}°F</h2>
                  </div>
-                 <div className="Cards"></div>
+                 <div className="Cards">
+                    <div className="Card_Sub">{data_R3?.forecast.forecastday.map(e => {return( 
+                      <>
+                        <div className="Card_Sub_Sub">
+                            <h2 key={e.day.avgtemp_c}>{e.day.avgtemp_c}&deg;C</h2>
+                            <h2 key={e.day.condition.text}>{e.day.condition.text}</h2>
+                            <h3 key={e.date}>{e.date}</h3>
+                            <img src={e.day.condition.icon} alt="err" />
+
+                        </div>
+                      </>
+                )})}</div>
+                 </div>
                </div>
              </div>
 

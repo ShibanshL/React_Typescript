@@ -7,17 +7,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: pink;
+    /* background: pink; */
 
 }
 .Part_One{
-    background: cyan;
+    /* background: cyan; */
     height:100%;
     width:100%;
     display: flex;
     align-items: baseline;
     justify-content: center;
     flex-direction: column;
+    margin-left: 5vw;
+    margin-right: -5vw;
 }
 .Top_text{
     height:100%;
@@ -44,15 +46,82 @@
     align-items:baseline;
     justify-content:end;
     margin-left: 2vw;
-    margin-bottom: 5vh;
+    margin-bottom:5vh;
     flex-direction: column;
+    /* background-color: pink; */
+    /* margin-top: -50vh; */
+}
+.Bottom_text Img{
+    position: relative;
+    top:-10vh;
+    /* background: pink; */
+}
+.Bottom_text .Img img{
+    width: 20em;
+    min-width: 10em;
+    /* margin-top: -25vh; */
+}
+.Bottom_text h2{
+    margin-top: -10vh;
 }
 .Part_Two{
-    background: yellow;
+    /* background: yellow; */
     height:100%;
     width:100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-left: -5vw;
+    margin-right: 5vw;
+}
+.Top_temp{
+    height:100%;
+    width:100%;
+    display: flex;
+    align-items:center;
+    justify-content:stretch;
+    margin-top: -20vh;
+    flex-direction: column;
+    /* background: blueviolet; */
+    text-align: center;
+}
+.Top_temp h1{
+    font-size: 10em;
+}
+.Top_temp h2{
+    margin-top: -5vh;
+    font-size:5em;
+}
+.Cards{
+    height:100%;
+    width:100%;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction: row !important;
+    /* background: rgb(72, 245, 42); */
+}
+.Card_Sub{
+    height:100%;
+    width:100%;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+.Card_Sub_Sub{
+    height:250px;
+    width:100%;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    margin: 20px;
+    text-align: center;
+    /* padding-top: 20px; */
+}
+.Card_Sub_Sub:first-child{
+    background: rgba(131, 232, 255, 0.5);
 }
