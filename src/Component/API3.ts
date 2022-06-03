@@ -3,6 +3,7 @@ export interface api3{
     forecast:{
         forecastday:[{
             // astro:{},
+            date:string,
             day:{
                 avghumidity: number
                 avgtemp_c: number

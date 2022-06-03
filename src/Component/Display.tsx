@@ -34,7 +34,7 @@ interface api {
 interface PropsN {
   check:string
 }
-let data:string = ''
+
 
 function Display ({check}:PropsN) {
  
@@ -50,29 +50,50 @@ function Display ({check}:PropsN) {
   let nc = 'delhi'
     
     async function fetch_R(){
-      let urlc =`https://api.openweathermap.org/data/2.5/weather?q=`+city_name+`&limit=5&appid=e0acb40649748d907810e7cb7e2bb994`
-      var res = await fetch(urlc)
-      let kdata = await res.json()
-      setData_R(kdata)
-      setName(kdata.name)
-      setFind(true)
+      try{
+        let urlc =`https://api.openweathermap.org/data/2.5/weather?q=`+city_name+`&limit=5&appid=e0acb40649748d907810e7cb7e2bb994`
+        var res = await fetch(urlc)
+        let kdata = await res.json()
+        setData_R(kdata)
+        setName(kdata.name)
+        setFind(true)
+      }
+      catch(e){
+        console.log(e)
+      }
+      
     }
     async function fetch_R1(){
+
+      try {
         let url = 'http://api.weatherapi.com/v1/current.json?key=e69179dbcaf74929a78121725220206&q='+city_name+'&aqi=no'
         var res = await fetch(url)
         let kdata = await res.json()
         setData_R2(kdata)
         // console.log('New api : ',kdata)
+      } 
+      catch (e) {
+        console.log(e)
+      }
+        
     }
 
     async function fetch_R3(){
-      let url = 'http://api.weatherapi.com/v1/forecast.json?key=e69179dbcaf74929a78121725220206&q='+city_name+'&days=10&aqi=no&alerts=no'
-      var res = await fetch(url)
-      let kdata = await res.json()
-      setData_R2(kdata)
-      console.log('New api : ',kdata)
-      setData_R3(kdata)
-      console.log('pls',data_R3)
+
+      try {
+        let url = 'http://api.weatherapi.com/v1/forecast.json?key=e69179dbcaf74929a78121725220206&q='+city_name+'&days=10&aqi=no&alerts=no'
+        var res = await fetch(url)
+        let kdata = await res.json()
+        setData_R2(kdata)
+        console.log('New api : ',kdata)
+        setData_R3(kdata)
+        console.log('pls',data_R3)
+      } 
+      catch (e) {
+        console.log(e)
+      }
+
+      
 
     }
     useEffect(() => {
@@ -82,6 +103,7 @@ function Display ({check}:PropsN) {
           fetch_R3
         ,
         2000)
+        
         // fetch_R3()
       },[city_name])
       
@@ -122,13 +144,15 @@ function Display ({check}:PropsN) {
                   return <h2 key={e.avgtemp_c}>{e.avgtemp_c}</h2>
                 }
             })}</div> */}
-            {console.log(data_R3?.forecast.forecastday)}
+            {/* {console.log(data_R3?.forecast.forecastday)} */}
+            {/* {console.log('inside return',data_R)} */}
             
             <div className="test">{data_R3?.forecast.forecastday.map(e => {return( 
               <>
                 <div className="Card">
-                    <h2 key={e.day.avgtemp_c}>{e.day.avgtemp_c}</h2>
+                    <h2 key={e.day.avgtemp_c}>{e.day.avgtemp_c}&deg;C</h2>
                     <h2 key={e.day.condition.text}>{e.day.condition.text}</h2>
+                    <h3 key={e.date}>{e.date}</h3>
 
 
                 </div>
