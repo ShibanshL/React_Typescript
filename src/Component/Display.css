@@ -29,14 +29,14 @@
 }
 .Main_weather .Heading{
     font-size: 5em;
-    padding-left: 3em;
+    padding-left: 1.8em;
 }
 .Main_weather h2{
     font-size: 2em;
-    padding-left: 7.6em;
+    padding-left: 4.6em;
 }
 .Main_weather h3{
-    padding-left: 13em;
+    padding-left: 8em;
     margin-top: 10px;
 }
 .Sub_weather{
@@ -51,13 +51,14 @@
 }
 .Sub_weather .Sub_sub{
     height: 40%;
-    width:70%;
+    width:72%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     background: rgba(255,255,255,0.5);
     border-radius: 25px;
     backdrop-filter: blur(10px);
+    color: white;
 
 }
 
@@ -78,8 +79,33 @@
 
 .test{
     /* background: white; */
-    height: 100px;
-    color:pink;
-    font-size: 3em;
+    height: 50vh;
+    min-height: 50vh;
+    min-width: 100Vw;
+    width:100vw;
+    /* color:pink; */
+    /* font-size: 3em; */
     width:100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: absolute;
+    margin-top: -55vh;
+    /* background: cyan; */
+}
+.Card{
+    position: relative;
+    right:-12vw;
+    background: rgba(255,255,255,0.5);
+    border-radius: 25px;
+    margin:30px;
+    text-align: center;
+    height: 150px;
+    width:200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* color:white; */
 }

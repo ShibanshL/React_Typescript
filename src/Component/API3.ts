@@ -1,7 +1,7 @@
 export interface api3{
     current:{}
     forecast:{
-        forecastday:[
+        forecastday:[{
             // astro:{},
             day:{
                 avghumidity: number
@@ -15,7 +15,7 @@ export interface api3{
                     icon: string
                     text: string
                 }
-            }
+            }}
         ]
     }
     location:{

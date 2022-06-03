@@ -4,6 +4,7 @@ import './Display.css'
 import Display_Sub from './Display_Sub'
 import {api2} from './API2'
 import {api3} from './API3'
+import Card from './Card'
 // require('dotenv').config()
 
 interface api {
@@ -122,7 +123,17 @@ function Display ({check}:PropsN) {
                 }
             })}</div> */}
             {console.log(data_R3?.forecast.forecastday)}
-            <div className="test">{data_R3?.forecast.forecastday.map(e => {return( <h2 key={e.avgtemp_c}>{e.avgtemp_c}</h2> )})}</div>
+            
+            <div className="test">{data_R3?.forecast.forecastday.map(e => {return( 
+              <>
+                <div className="Card">
+                    <h2 key={e.day.avgtemp_c}>{e.day.avgtemp_c}</h2>
+                    <h2 key={e.day.condition.text}>{e.day.condition.text}</h2>
+
+
+                </div>
+              </>
+             )})}</div>
           </>
         )
       }
