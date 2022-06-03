@@ -3,6 +3,7 @@ import React, { useState,useEffect } from 'react'
 import './Display.css'
 import Display_Sub from './Display_Sub'
 import {api2} from './API2'
+import {api3} from './API3'
 // require('dotenv').config()
 
 interface api {
@@ -39,6 +40,8 @@ function Display ({check}:PropsN) {
   const [find, setFind] = useState<Boolean>(false)
   const [data_R, setData_R] = useState<api>()
   const [data_R2, setData_R2] = useState<api2>()
+  const [data_R3, setData_R3] = useState<api3>()
+
   const [name,setName] = useState<string>('')
   let city_name = check
   let t:number|undefined;
@@ -67,6 +70,8 @@ function Display ({check}:PropsN) {
       let kdata = await res.json()
       setData_R2(kdata)
       console.log('New api : ',kdata)
+      setData_R3(kdata)
+      console.log('pls',data_R3)
 
     }
     useEffect(() => {
@@ -85,23 +90,27 @@ function Display ({check}:PropsN) {
       }
       else{
         return(
-          <div className="Display_Main">
-              <div className="Main_weather">
-                <h1 className='Heading'>{data_R?.name}</h1>
-                <h2>{data_R2?.current.temp_c}&deg;C</h2>
-                <h3>{data_R2?.current.condition.text}</h3>
-                {/* <h2>{t}&deg;C</h2> */}
+          <>
+            <div className="Display_Main">
+                <div className="Main_weather">
+                  <h1 className='Heading'>{data_R?.name}</h1>
+                  <h2>{data_R2?.current.temp_c}&deg;C</h2>
+                  <h3>{data_R2?.current.condition.text}</h3>
+                  {/* <h2>{t}&deg;C</h2> */}
 
-              </div>
-  
-              <div className="Sub_weather">
-                <div className="Sub_sub">
-                  <h2>Clouds : <br></br>{data_R?.clouds.all}%</h2>
-                  <h2>Humidity : <br></br>{data_R?.main.humidity}%</h2>
-                  <h2>Wind : <br></br>{data_R?.wind.speed} KMPH</h2>
                 </div>
-              </div>
-          </div>
+    
+                <div className="Sub_weather">
+                  <div className="Sub_sub">
+                    <h2>Clouds : <br></br>{data_R?.clouds.all}%</h2>
+                    <h2>Humidity : <br></br>{data_R?.main.humidity}%</h2>
+                    <h2>Wind : <br></br>{data_R?.wind.speed} KMPH</h2>
+                  </div>
+                </div>
+            </div>
+
+            {/* <div className="test">{data_R3?.forcast.forecastday.map(e => (e.avgtemp_c))}</div> */}
+          </>
         )
       }
    
