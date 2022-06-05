@@ -6,6 +6,9 @@ import {api2} from './API2'
 import {api3} from './API3'
 import Card from './Card'
 import Loading from './Loading'
+
+// import 'dotenv/config'
+// require('dotenv').config()
 // require('dotenv').config()
 
 // console.log(process.env)
