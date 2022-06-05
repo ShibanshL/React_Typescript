@@ -163,8 +163,10 @@
     align-items:center;
     justify-content:center;
     flex-direction: row !important;
+    cursor: pointer;
     /* background: rgb(72, 245, 42); */
 }
+
 .Card_Sub{
     height:100%;
     width:100%;
@@ -185,6 +187,20 @@
     text-align: center;
     /* padding-top: 20px; */
 }
+/* .Cards_Sub_Sub:hover{
+    box-shadow: 8px 8px 8px 8px white;
+} */
 .Card_Sub_Sub:first-child{
     background: rgba(131, 232, 255, 0.5);
+}
+.Loading_Ani{
+    height: 100vh;
+    width:100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: -10vh; */
+    /* background: pink; */
+    position: absolute;
+    top:0vh;
 }

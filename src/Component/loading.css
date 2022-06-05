@@ -13,7 +13,8 @@ body {
     width: 1rem;
     height: 1rem;
     margin: 2rem 0.3rem;
-    background: #979fd0;
+    /* background: #979fd0; */
+    background: #000000;
     border-radius: 50%;
     -webkit-animation: 0.9s bounce infinite alternate;
             animation: 0.9s bounce infinite alternate;
@@ -46,12 +47,14 @@ body {
     margin: 2rem;
     border-radius: 50%;
     border: 0.3rem solid rgba(151, 159, 208, 0.3);
-    border-top-color: #979fd0;
+    /* border-top-color: #979fd0; */
+    border-top-color: #000000;
     -webkit-animation: 1.5s spin infinite linear;
             animation: 1.5s spin infinite linear;
   }
   .donut.multi {
-    border-bottom-color: #979fd0;
+    /* border-bottom-color: #979fd0; */
+    border-bottom-color: #000000;
   }
   
   @-webkit-keyframes spin {
@@ -70,7 +73,8 @@ body {
     height: 2rem;
     margin: 2rem;
     border-radius: 50%;
-    border: 0.3rem solid #979fd0;
+    /* border: 0.3rem solid #979fd0; */
+    border: 0.3rem solid #000000;
     transform: translate(50%);
     -webkit-animation: 1s ripple ease-out infinite;
             animation: 1s ripple ease-out infinite;
@@ -107,7 +111,8 @@ body {
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    border: 0.3rem solid #979fd0;
+    /* border: 0.3rem solid #979fd0; */
+    border: 0.3rem solid #000000;
     -webkit-animation: 1.5s ripple infinite;
             animation: 1.5s ripple infinite;
   }
@@ -137,19 +142,25 @@ body {
             animation: 2s fancy infinite alternate;
   }
   .fancy-spinner div.ring:nth-child(1) {
-    border-left-color: #979fd0;
-    border-right-color: #979fd0;
+    /* border-left-color: #979fd0;
+    border-right-color: #979fd0; */
+    border-left-color: #000000;
+    border-right-color: #000000;
   }
   .fancy-spinner div.ring:nth-child(2) {
-    border-top-color: #ffffff;
-    border-bottom-color: #979fd0;
+    /* border-top-color: #979fd0;
+    border-bottom-color: #979fd0; */
+    border-top-color: #000000;
+    border-bottom-color: #000000;
     -webkit-animation-delay: 1s;
             animation-delay: 1s;
   }
   .fancy-spinner div.dot {
     width: 1rem;
     height: 1rem;
-    background: #979fd0;
+    /* background: #979fd0; */
+    background: #000000;
+
   }
   
   @-webkit-keyframes fancy {

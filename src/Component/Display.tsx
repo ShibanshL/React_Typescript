@@ -59,9 +59,16 @@ function Display ({check}:PropsN) {
         var res = await fetch(urlc)
         let kdata = await res.json()
         console.log('fetch_R',kdata)
-        setData_R(kdata)
-        setName(kdata.name)
-        setFind(true)
+        // setFind(true)
+        // setTimeout(()=>{
+          setData_R(kdata)
+          setName(kdata.name)
+        // },5000)
+       setTimeout( 
+         ()=>{
+          setFind(true)
+         }
+        ,2000)
       }
       catch(e){
         console.log(e)
@@ -75,7 +82,9 @@ function Display ({check}:PropsN) {
         var res = await fetch(url)
         let kdata = await res.json()
         console.log('fetch_R1',kdata)
+        setFind(true)
         setData_R2(kdata)
+        setFind(false)
         // console.log('New api : ',kdata)
       } 
       catch (e) {
@@ -90,13 +99,13 @@ function Display ({check}:PropsN) {
         let url = 'http://api.weatherapi.com/v1/forecast.json?key=e69179dbcaf74929a78121725220206&q='+city_name+'&days=10&aqi=no&alerts=no'
         var res = await fetch(url)
         let kdata = await res.json()
-        setFind(true)
+        // setFind(false)
         console.log('fetch_R3',kdata)
         setData_R2(kdata)
         console.log('New api : ',kdata)
         setData_R3(kdata)
         console.log('pls',data_R3)
-        setFind(false)
+        // setFind(true)
       } 
       catch (e) {
         console.log(e)
@@ -108,18 +117,22 @@ function Display ({check}:PropsN) {
     useEffect(() => {
         fetch_R()
         fetch_R1()
-        setTimeout(
-          fetch_R3
-        ,
-        2000)
+      setTimeout(
+        () => {
+          
+          fetch_R3()
+        }
+        ,2000)
         
         // fetch_R3()
       },[city_name])
       
-      if(find==true){
+      if(find==false){
         return( 
           <>
-          <Loading />
+          <div className="Loading_Ani">
+            <Loading />
+          </div>
           </>
         )
        
