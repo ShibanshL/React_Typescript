@@ -175,8 +175,16 @@ function Display ({check}:PropsN) {
                       <h2>{data_R3?.forecast.forecastday[0].day.condition.text}</h2>
                    </div>
                    <div className="Box">
-                     <h2></h2>
-                     <h2></h2>
+                     <div className="Wind">
+                       <img src='./assets/Wind.svg' alt="err" />
+                       <hr />
+                       <h2>{data_R?.wind.speed}KMPH</h2>
+                     </div>
+                    <div className="Humidity">
+                      <img src="./assets/Clouds.svg" alt="" />
+                      <hr />
+                      <h2>{data_R?.main.humidity}%</h2>
+                    </div>
                    </div>
                  </div>
                </div>

@@ -18,8 +18,8 @@
     align-items: baseline;
     justify-content: center;
     flex-direction: column;
-    margin-left: 5vw;
-    margin-right: -5vw;
+    margin-left: 2vw;
+    margin-right: -2vw;
 }
 .Top_text{
     height:100%;
@@ -28,6 +28,7 @@
     align-items: baseline;
     justify-content:flex-start;
     margin-left: 2vw;
+    margin-top: -5vh;
     flex-direction: column;
 }
 .Top_text h1{
@@ -60,17 +61,66 @@
     /* background: pink; */
 }
 .Bottom_text .Bottom_H_T h2{
-  font-size: 3em;
+  font-size: 4em;
+  margin-top: -13vh;
 }
 .Bottom_text h2{
     margin-top: -10vh;
 }
 .Bottom_text .Box{
     position: absolute;
-    height:35vh;
-    width:30vw;;
+    height:33vh;
+    width:35vw;;
     background: rgba(255, 255, 255,0.5);
     border-radius: 25px;
+    top:57vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* margin-top: -50vh; */
+}
+.Box .Humidity, .Box .Wind{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    /* background: pink; */
+}
+.Humidity img{
+    width: 7vw;
+    margin-top: -4.8vw;
+}
+.Humidity hr{
+    border:3px solid black;
+    border-radius: 5px;
+    width: 10vw;
+    background: black;
+    margin-top: 0.8vw;
+}
+.Humidity h2{
+    /* margin-top: 5vw; */
+    position: absolute;
+    bottom:5vh;
+}
+.Wind img{
+    width: 7vw;
+    margin-top: -4.8vw;
+
+}
+.Wind hr{
+    border:3px solid black;
+    border-radius: 5px;
+    width: 10vw;
+    background: black;
+    margin-top: 0.8vw;
+}
+.Wind h2{
+    /* margin-top: 5vw; */
+    position: absolute;
+    bottom:5vh;
 }
 .Part_Two{
     /* background: yellow; */
@@ -80,8 +130,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-left: -5vw;
-    margin-right: 5vw;
+    margin-left: -2vw;
+    margin-right: 2vw;
 }
 .Top_temp{
     height:100%;
