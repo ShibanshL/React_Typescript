@@ -141,7 +141,7 @@ body {
     border-right-color: #979fd0;
   }
   .fancy-spinner div.ring:nth-child(2) {
-    border-top-color: #979fd0;
+    border-top-color: #ffffff;
     border-bottom-color: #979fd0;
     -webkit-animation-delay: 1s;
             animation-delay: 1s;

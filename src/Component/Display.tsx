@@ -5,6 +5,7 @@ import Display_Sub from './Display_Sub'
 import {api2} from './API2'
 import {api3} from './API3'
 import Card from './Card'
+import Loading from './Loading'
 // require('dotenv').config()
 
 // console.log(process.env)
@@ -89,11 +90,13 @@ function Display ({check}:PropsN) {
         let url = 'http://api.weatherapi.com/v1/forecast.json?key=e69179dbcaf74929a78121725220206&q='+city_name+'&days=10&aqi=no&alerts=no'
         var res = await fetch(url)
         let kdata = await res.json()
+        setFind(true)
         console.log('fetch_R3',kdata)
         setData_R2(kdata)
         console.log('New api : ',kdata)
         setData_R3(kdata)
         console.log('pls',data_R3)
+        setFind(false)
       } 
       catch (e) {
         console.log(e)
@@ -113,10 +116,10 @@ function Display ({check}:PropsN) {
         // fetch_R3()
       },[city_name])
       
-      if(find==false){
+      if(find==true){
         return( 
           <>
-          <h1>working</h1>
+          <Loading />
           </>
         )
        
@@ -124,45 +127,6 @@ function Display ({check}:PropsN) {
       else{
         return(
           <>
-            {/* <div className="Display_Main">
-                <div className="Main_weather">
-                  <h1 className='Heading'>{data_R?.name}</h1>
-                  <h2>{data_R2?.current.temp_c}&deg;C</h2>
-                  <h3>{data_R2?.current.condition.text}</h3>
-                </div>
-    
-                <div className="Sub_weather">
-                  <div className="Sub_sub">
-                    <h2>Clouds : <br></br>{data_R?.clouds.all}%</h2>
-                    <h2>Humidity : <br></br>{data_R?.main.humidity}%</h2>
-                    <h2>Wind : <br></br>{data_R?.wind.speed} KMPH</h2>
-                  </div>
-                </div>
-            </div> */}
-
-            {/* <div className="test">{data_R3?.forecast.forecastday.map(e =>{ 
-                if(e.avghumidity == undefined){
-                  return( <h2 key={e.avgtemp_c}>{e.avgtemp_f}</h2>)
-                }
-                else {
-                  return <h2 key={e.avgtemp_c}>{e.avgtemp_c}</h2>
-                }
-            })}</div> */}
-            {/* {console.log(data_R3?.forecast.forecastday)} */}
-            {/* {console.log('inside return',data_R)} */}
-            
-            {/* <div className="test">{data_R3?.forecast.forecastday.map(e => {return( 
-              <>
-                <div className="Card">
-                    <h2 key={e.day.avgtemp_c}>{e.day.avgtemp_c}&deg;C</h2>
-                    <h2 key={e.day.condition.text}>{e.day.condition.text}</h2>
-                    <h3 key={e.date}>{e.date}</h3>
-                    <img src={e.day.condition.icon} alt="err" />
-
-                </div>
-              </>
-             )})}</div> */}
-
              <div className="Display_Main">
                <div className="Part_One">
                  <div className="Top_text">
