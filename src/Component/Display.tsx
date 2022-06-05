@@ -46,16 +46,17 @@ function Display ({check}:PropsN) {
   const [data_R, setData_R] = useState<api>()
   const [data_R2, setData_R2] = useState<api2>()
   const [data_R3, setData_R3] = useState<api3>()
-
+  console.log(process.env.REACT_APP_API_KEY)
   const [name,setName] = useState<string>('')
   let city_name = check
   let t:number|undefined;
-  const apiKey = 'da540d286a89bdbd7dec5990f11a2299'
+  const apiKey:string|undefined = process.env.REACT_APP_API_KEY
+  const apiKey2:string|undefined = process.env.REACT_APP_API_KEY2
   let nc = 'delhi'
     
     async function fetch_R(){
       try{
-        let urlc =`https://api.openweathermap.org/data/2.5/weather?q=`+city_name+`&limit=5&appid=e0acb40649748d907810e7cb7e2bb994`
+        let urlc =`https://api.openweathermap.org/data/2.5/weather?q=`+city_name+`&limit=5&appid=${apiKey}`
         var res = await fetch(urlc)
         let kdata = await res.json()
         console.log('fetch_R',kdata)
@@ -78,7 +79,7 @@ function Display ({check}:PropsN) {
     async function fetch_R1(){
 
       try {
-        let url = 'http://api.weatherapi.com/v1/current.json?key=e69179dbcaf74929a78121725220206&q='+city_name+'&aqi=no'
+        let url = 'http://api.weatherapi.com/v1/current.json?key='+apiKey2+'&q='+city_name+'&aqi=no'
         var res = await fetch(url)
         let kdata = await res.json()
         console.log('fetch_R1',kdata)
@@ -96,7 +97,7 @@ function Display ({check}:PropsN) {
     async function fetch_R3(){
 
       try {
-        let url = 'http://api.weatherapi.com/v1/forecast.json?key=e69179dbcaf74929a78121725220206&q='+city_name+'&days=10&aqi=no&alerts=no'
+        let url = 'http://api.weatherapi.com/v1/forecast.json?key='+apiKey2+'&q='+city_name+'&days=10&aqi=no&alerts=no'
         var res = await fetch(url)
         let kdata = await res.json()
         // setFind(false)
