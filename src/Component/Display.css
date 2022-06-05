@@ -51,18 +51,26 @@
     /* background-color: pink; */
     /* margin-top: -50vh; */
 }
-.Bottom_text Img{
+.Bottom_text .Bottom_H_T{
     position: relative;
-    top:-10vh;
+    height:100%;
+    width:100%;
+    top:-2vh;
+    /* text-overflow: clip; */
     /* background: pink; */
 }
-.Bottom_text .Img img{
-    width: 20em;
-    min-width: 10em;
-    /* margin-top: -25vh; */
+.Bottom_text .Bottom_H_T h2{
+  font-size: 3em;
 }
 .Bottom_text h2{
     margin-top: -10vh;
+}
+.Bottom_text .Box{
+    position: absolute;
+    height:35vh;
+    width:30vw;;
+    background: rgba(255, 255, 255,0.5);
+    border-radius: 25px;
 }
 .Part_Two{
     /* background: yellow; */

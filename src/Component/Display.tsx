@@ -171,10 +171,13 @@ function Display ({check}:PropsN) {
                    <h2>{data_R3?.forecast.forecastday[0].date}</h2>
                  </div>
                  <div className="Bottom_text">
-                   <div className="Img">
-                     <img src={data_R3?.forecast.forecastday[0].day.condition.icon} alt="" />
+                   <div className="Bottom_H_T">
+                      <h2>{data_R3?.forecast.forecastday[0].day.condition.text}</h2>
                    </div>
-                   <h2>{data_R3?.forecast.forecastday[0].day.condition.text}</h2>
+                   <div className="Box">
+                     <h2></h2>
+                     <h2></h2>
+                   </div>
                  </div>
                </div>
                <div className="Part_Two">
